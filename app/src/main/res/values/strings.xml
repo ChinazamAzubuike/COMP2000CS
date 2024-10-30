@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">COMP2000CS</string>
+
+    <string name="welcomeText">Welcome</string>
+    <string name="login_asText">Login as:</string>
+    <string name="employeeButton">Employee</string>
+    <string name="adminButton">Admin</string>
+    <string name="helpText">Need help?</string>
+    <string name="logoText">UnityHub</string>
+
+    <string name="profile_image">Profile Image</string>
+    <string name="login_title">Login to your account</string>
+    <string name="emailInput">EMAIL</string>
+    <string name="passwordInput">PASSWORD</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="login_button">LOGIN</string>
+    <string name="backButton">Back</string>
+
+    <string name="empText">Employee</string>
+    <string name="employeeText">Employee</string>
+    <string name="your_details">Your details</string>
+    <string name="empHolidays">View booked holidays</string>
+    <string name="empRequest">Request a holiday</string>
+    <string name="emp_request">Request details</string>
+    <string name="settings_image">Settings icon</string>
+    <string name="notifs_image">Notification icon</string>
+
+    <string name="profile_image_a4">Profile image</string>
+    <string name="change_profile">Tap profile above to change picture</string>
+    <string name="firstnameInput">First name</string>
+    <string name="surnameInput">Surname</string>
+    <string name="emailAdInput">Email</string>
+    <string name="PersonalDet">Other Personal Details</string>
+    <string name="first_name">First Name</string>
+
+    <string name="personal_details_tab">Personal Details</string>
+    <string name="about_you">About You</string>
+    <string name="house_info">House Info</string>
+    <string name="employee_info">Employee Info</string>
+    <string name="main_profile">Your profile</string>
+
+    <string name="booked_holidays_tab">Booked Holidays</string>
+    <string name="remaining_days">Remaining leave days</string>
+    <string name="accepted">Accepted</string>
+    <string name="declined">Declined</string>
+    <string name="pending">Pending</string>
+
+    <string name="request_holidays_tab">Request Holiday</string>
+    <string name="ok">OK</string>
+
+    <string name="settings_tab">Settings</string>
+    <string name="account">Account</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="privacy">Privacy</string>
+    <string name="delete_account">Delete account</string>
+    <string name="notifications">Notifications</string>
+    <string name="email">Email</string>
+    <string name="text">Text</string>
+    <string name="push_notifications">Push notifications</string>
+    <string name="notification_preferences">Notification Preferences</string>
+    <string name="salary_updates">Salary updates</string>
+    <string name="meetings">Meetings</string>
+    <string name="permissions">Permissions</string>
+    <string name="camera">Camera</string>
+    <string name="location">Location</string>
+
+    <string name="edit_notification_preferences">Edit notification preferences</string>
+    <string name="notifications_switch_email">Email switch</string>
+    <string name="notifications_switch_text">Text switch</string>
+
+
+
+</resources>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/empcolor"
+    tools:context=".ThirdActivity">
+
+    <Button
+        android:id="@+id/empDetails"
+        android:text="@string/your_details"
+
+        android:layout_width="320dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="216dp"
+        android:background="@drawable/rounded_button3"
+
+        android:backgroundTint="@color/softblack"
+        android:padding="14dp"
+
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/empRequest"
+        android:text="@string/empRequest"
+        android:contentDescription="@string/emp_request"
+
+
+        android:layout_width="320dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/rounded_button3"
+
+        android:backgroundTint="@color/softblack"
+        android:padding="14dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/empHolidays"
+        android:text="@string/empHolidays"
+        android:contentDescription="@string/empHolidays"
+
+        android:layout_width="320dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/rounded_button"
+
+        android:backgroundTint="@color/softblack"
+        android:padding="14dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="411dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/profile_image"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profileicon2" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="71dp"
+            android:layout_height="67dp"
+            android:contentDescription="@string/notifs_image"
+
+            android:layout_marginHorizontal="316dp"
+            android:layout_marginVertical="12dp"
+
+            app:srcCompat="@drawable/notifsbell" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="74dp"
+            android:layout_height="61dp"
+
+            android:contentDescription="@string/settings_image"
+
+            android:layout_marginVertical="14dp"
+            android:layout_marginHorizontal="24dp"
+
+            app:srcCompat="@drawable/settingsicon" />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TextView
+
+        android:id="@+id/employeeText"
+        android:text="@string/empText"
+        android:contentDescription="@string/empText"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="#412467"
+        android:textSize="50sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintVertical_bias="0.096" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

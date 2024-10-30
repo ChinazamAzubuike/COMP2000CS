@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define the shape as a rectangle -->
+    <solid android:color="#FFFFFF"/> <!-- Button background color -->
+
+    <!-- Define rounded corners -->
+    <corners android:radius="12dp"/> <!-- Adjust this value for more/less curve -->
+
+    <!-- Optional: Set padding for better text alignment -->
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" />
+
+    <!-- Optional: Set a border (stroke) for the button -->
+    <stroke
+        android:width="2dp"
+        android:color="#4A4A58"/> <!-- Button border color -->
+</shape>

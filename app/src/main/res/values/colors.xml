@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="logsign_color">#DBDBDB</color>
+    <color name="grey">#909090</color>
+    <color name="help_color">#474747</color>
+
+    <color name="indigo">#181743</color>
+    <color name="empcolor">#BDD4E1</color>
+    <color name="softblack">#1E1E1E</color>
+    <color name="yourprofile_color">#211BC9</color>
+    <color name="PerDet_color">#0C69AD</color>
+
+    <color name="declined_color">#780000</color>
+</resources>
