@@ -111,7 +111,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="140dp"
+                android:layout_marginEnd="130dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/grey"
@@ -156,6 +156,14 @@
                         android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:text="@string/reasonDropdown"
+                android:contentDescription="@string/reasonDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/btn_dropdown" />
 
             <CalendarView
                 android:id="@+id/calendarView"

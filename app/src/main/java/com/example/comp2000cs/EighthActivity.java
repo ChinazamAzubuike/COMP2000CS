@@ -1,12 +1,15 @@
 package com.example.comp2000cs;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+
 
 public class EighthActivity extends AppCompatActivity {
 
@@ -20,5 +23,14 @@ public class EighthActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // BACK BUTTON from employee profile TO DASHBOARD
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(view -> finish());
+
+
+
+
+
     }
 }

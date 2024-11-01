@@ -3,17 +3,17 @@
     <!-- Define the shape as a rectangle -->
     <solid android:color="#FFFFFF"/> <!-- Button background color -->
 
-    <!-- Define rounded corners -->
-    <corners android:radius="16dp"/> <!-- Adjust this value for more/less curve -->
 
-    <!-- Optional: Set padding for better text alignment -->
+    <corners android:radius="16dp"/>
+
+    <!-- padding for better text alignment -->
     <padding
         android:left="10dp"
         android:top="10dp"
         android:right="10dp"
         android:bottom="10dp" />
 
-    <!-- Optional: Set a border (stroke) for the button -->
+    <!--Set a border (stroke) for the button -->
     <stroke
         android:width="2dp"
         android:color="#4A4A58"/> <!-- Button border color -->

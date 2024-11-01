@@ -38,6 +38,7 @@
     <string name="house_info">House Info</string>
     <string name="employee_info">Employee Info</string>
     <string name="main_profile">Your profile</string>
+    <string name="temppencilicon">Pencil icon</string>
 
     <string name="booked_holidays_tab">Booked Holidays</string>
     <string name="remaining_days">Remaining leave days</string>
@@ -47,6 +48,7 @@
 
     <string name="request_holidays_tab">Request Holiday</string>
     <string name="ok">OK</string>
+    <string name="reasonDropdown">Reason</string>
 
     <string name="settings_tab">Settings</string>
     <string name="account">Account</string>

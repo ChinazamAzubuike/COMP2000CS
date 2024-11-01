@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button employeeButton = findViewById(R.id.employeeButton);
         employeeButton.setOnClickListener(view -> {
-            // Create an intent to start the second activity
+            // intent to start the second activity
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent); // Start the second activity
         });
