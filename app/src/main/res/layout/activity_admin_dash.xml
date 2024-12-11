@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDash"
+    android:background="@drawable/gradient"
+    >
+
+
+
+    <Button
+        android:id="@+id/yourEmployees"
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+
+        android:layout_marginTop="244dp"
+        android:background="@drawable/rounded_button3"
+        android:backgroundTint="#D6000000"
+
+
+        android:text="@string/your_employees"
+
+
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+
+    <Button
+        android:id="@+id/holiday_requests"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+
+        android:background="@drawable/rounded_button3"
+        android:backgroundTint="#D6000000"
+        android:contentDescription="@string/holiday_requests"
+
+        android:padding="14dp"
+        android:text="@string/holiday_requests"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <Button
+        android:id="@+id/add_remove"
+        android:layout_width="150dp"
+
+        android:layout_height="150dp"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#D6000000"
+        android:contentDescription="@string/add_remove"
+
+        android:ellipsize="end"
+        android:importantForAccessibility="yes"
+        android:maxLines="2"
+        android:text="@string/add_remove"
+
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#000000"
+        android:maxWidth="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintBottomNav">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="42dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="336dp"
+
+            android:layout_marginVertical="6dp"
+            android:contentDescription="@string/notifs_image"
+
+            app:srcCompat="@drawable/notifsbell" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="61dp"
+            android:layout_height="40dp"
+
+            android:layout_marginHorizontal="24dp"
+
+            android:layout_marginVertical="11dp"
+            android:contentDescription="@string/settings_image"
+
+            app:srcCompat="@drawable/settingsicon" />
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+
+            android:contentDescription="@drawable/homeicon"
+
+            app:srcCompat="@drawable/homeicon"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="86dp"
+        android:layout_height="78dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/profile_image"
+
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profileicon2" />
+
+    <TextView
+
+        android:id="@+id/greeting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/admText"
+        android:text="@string/greeting_text"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintVertical_bias="0.012" />
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="176dp"
+
+        android:background="@drawable/rounded_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
