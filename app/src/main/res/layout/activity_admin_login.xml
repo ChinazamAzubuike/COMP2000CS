@@ -6,8 +6,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity"
-    android:background="@color/logsign_color"
+    tools:context=".AdminLogin"
+    android:background="#9D7171"
     >
 
 
@@ -27,15 +27,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backicon2"
+        app:srcCompat="@drawable/backicon"
         tools:ignore="TouchTargetSizeCheck" />
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="208dp"
+        android:gravity="center"
+        android:text="@string/admText"
 
+        android:textColor="#000000"
 
-
-
-
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/loginTitle"
@@ -44,7 +54,7 @@
         android:layout_marginTop="50dp"
 
         android:text="@string/login_title"
-        android:textColor="#322B4B"
+        android:textColor="#3A2121"
         android:textSize="30sp"
 
         android:textStyle="bold"
@@ -100,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
 
-        android:textColor="@color/help_color"
+        android:textColor="#1F1F1F"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
 
-        android:textColor="#322B4B"
+        android:textColor="#4D282F"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,6 +137,7 @@
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="197dp"
+
         android:background="@null"
         android:scaleType="fitCenter"
 
@@ -150,7 +161,7 @@
         android:layout_marginTop="555dp"
 
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/indigo"
+        android:backgroundTint="#431717"
         android:padding="14dp"
         android:textColor="@android:color/white"
         android:textSize="22sp"

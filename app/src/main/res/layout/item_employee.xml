@@ -5,18 +5,51 @@
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
-        android:id="@+id/nameTextView"
+    <TextView android:id="@+id/textViewId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:text="@string/id" />
 
-    <TextView
-        android:id="@+id/departmentTextView"
+    <TextView android:id="@+id/textViewFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/department"
-        android:textSize="14sp" />
+        android:textSize="16sp"
+        android:text="@string/firstname" />
+
+    <TextView android:id="@+id/textViewLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/lastname" />
+
+    <TextView android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/email" />
+
+    <TextView android:id="@+id/textViewDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/department" />
+
+    <TextView android:id="@+id/textViewJoiningDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/joiningdate" />
+
+    <TextView android:id="@+id/textViewLeaves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/leaves" />
+
+    <TextView android:id="@+id/textViewSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/salary" />
 </LinearLayout>

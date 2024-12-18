@@ -33,20 +33,30 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-        Button employeeButton = findViewById(R.id.employeeButton);
-        employeeButton.setOnClickListener(view ->
+        Button loginButton = findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(view ->
         {
-            // intent to start the second activity
+            //to go to secondactivity page, which is the employee login
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent); // Start the second activity
         });
 
 
+
+
+
         Button btnEmployee = findViewById(R.id.btn_employee);
-        btnEmployee.setOnClickListener(v -> {
+        btnEmployee.setOnClickListener(v ->
+        {
             Intent intent = new Intent(MainActivity.this, AdminEmployees.class);
             startActivity(intent);
         });
+
+
+
+
+
+
 
 
     }
