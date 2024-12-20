@@ -1,81 +1,91 @@
 package com.example.comp2000cs;
 
 import android.os.Bundle;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+//import java.util.ArrayList;
 import java.util.List;
 import android.util.Log;
+//import android.view.View;
 
-import org.json.JSONArray;
-//import org.json.JSONException;
+
+//import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class AdminEmployees extends AppCompatActivity {
+
+public class AdminEmployees extends AppCompatActivity
+{
+
+    private EmployeeAdapter adapter;
+    private List<EmployeeA> employeeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_employees);
 
-        // Initialize RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        // Initialize the database
+        DatabaseMaterial databaseMaterial = new DatabaseMaterial(this);
+
+        // Set up RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewEmployees);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // API URL
-        String url = "http://10.224.41.11/comp2000/employees";
+        // Fetch employees from the database
+        employeeList = databaseMaterial.getAllEmployees();
+        adapter = new EmployeeAdapter(employeeList);
+        recyclerView.setAdapter(adapter);
 
-        // Volley RequestQueue
-        RequestQueue queue = Volley.newRequestQueue(this);
+        // Load employees from the API
+        loadEmployees();
+    }
 
-        // Make API request
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                response -> {
-                    try {
-                        // Parse JSON response
-                        JSONArray jsonArray = new JSONArray(response);
-                        List<EmployeeA> employees = new ArrayList<>();
 
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject employeeJson = jsonArray.getJSONObject(i);
+    private void loadEmployees() {
+        int[] employeeIds = {1440, 1441, 1403, 1407}; // Your employee IDs
+
+        try (DatabaseMaterial databaseMaterial = new DatabaseMaterial(this)) { // Try-with-resources
+            for (int id : employeeIds) {
+                ApiMaterial.getEmployeeById(this, id, new ApiMaterial.VolleyResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject obj = new JSONObject(response);
 
                             EmployeeA employee = new EmployeeA(
-                                    employeeJson.getInt("id"),
-                                    employeeJson.getString("firstname"),
-                                    employeeJson.getString("lastname"),
-                                    employeeJson.getString("email"),
-                                    employeeJson.getString("department"),
-                                    employeeJson.getDouble("salary"),
-                                    employeeJson.getString("joiningdate"),
-                                    employeeJson.getInt("leaves")
+                                    obj.getInt("id"),
+                                    obj.optString("firstname", "N/A"),
+                                    obj.optString("lastname", "N/A"),
+                                    obj.optString("email", "N/A"),
+                                    obj.optString("department", "N/A"),
+                                    obj.optString("joiningdate", "N/A"),
+                                    obj.optInt("leaves", 0),
+                                    obj.optDouble("salary", 0.0)
                             );
-                            employees.add(employee);
+
+                            databaseMaterial.addEmployee(employee);
+
+                            employeeList.add(employee);
+                            adapter.notifyItemInserted(employeeList.size() - 1);
+
+                        } catch (Exception e) {
+                            Log.e("JSON_PARSE_ERROR", "Error parsing JSON", e);
                         }
-
-                        // Set RecyclerView Adapter
-                        EmployeeAdapter adapter = new EmployeeAdapter(employees);
-                        recyclerView.setAdapter(adapter);
-
                     }
-                    catch (Exception e) {
-                        Log.e("AdminEmployees", "Error parsing JSON", e);
+
+                    @Override
+                    public void onError(String error) {
+                        Log.e("API_ERROR", "Error fetching employee with ID: " + id + ", " + error);
                     }
-                },
-                error -> Log.e("AdminEmployees", "Error fetching data", error)
-        );
-
-
-
-        queue.add(stringRequest);
+                });
+            }
+        } catch (Exception e) {
+            Log.e("DB_ERROR", "Error initializing or using the database", e);
+        }
     }
+
+
 }
+
+

@@ -3,6 +3,7 @@
 
     <string name="welcomeText">Welcome</string>
     <string name="login_asText">Login as:</string>
+    <string name="please_login">Please login:</string>
     <string name="employeeButton">Employee</string>
     <string name="adminButton">Admin</string>
     <string name="helpText">Need help?</string>
@@ -163,16 +164,18 @@
     <!--        <string name="camera">Camera</string>-->
     <!--        <string name="location">Location</string>-->
 
-    <!--        <string name="edit_notification_preferences">Edit notification preferences</string>-->
-    <!--        <string name="notifications_switch_email">Email switch</string>-->
-    <!--        <string name="notifications_switch_text">Text switch</string>-->
 
 
 
-
-
-    <string name="name">Name</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
     <string name="department">Department</string>
+    <string name="salary">Salary</string>
+    <string name="joiningdate">Joining date</string>
+    <string name="leaves">Leaves</string>
+    <string name="id">ID</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
 
 
@@ -180,13 +183,31 @@
     <string name="api">API btn</string>
 
 
-    <string name="loading">Loading…</string>
+    <string name="employee_id">ID: %1$d</string>
+    <string name="employee_name">Name: %1$s %2$s</string>
+    <string name="employee_email">Email: %1$s</string>
+    <string name="employee_department">Department: %1$s</string>
+    <string name="employee_joining_date">Joining Date: %1$s</string>
+    <string name="employee_leaves">Leaves: %1$d</string>
+    <string name="employee_salary">Salary: $%1$.2f</string>
 
-    <string name="error_message">Error: %1$s</string>
 
-    <string name="error_parsing">Error parsing JSON: %1$s</string>
-    <string name="error_request">Error: %1$s</string>
-    <string name="total_employees">Total Employees: %1$d</string>
+
+
+
+
+
+<!--    <string name="loading">Loading…</string>-->
+
+<!--    <string name="error_message">Error: %1$s</string>-->
+
+<!--    <string name="error_parsing">Error parsing JSON: %1$s</string>-->
+<!--    <string name="error_request">Error: %1$s</string>-->
+<!--    <string name="total_employees">Total Employees: %1$d</string>-->
+
+<!--    <string name="employee_name">%1$s %2$s</string>-->
+
+
 
 
 </resources>
