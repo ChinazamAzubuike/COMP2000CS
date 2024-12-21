@@ -25,34 +25,53 @@ public class AdminEmployees extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_employees);
 
-        // Initialize the database
-        DatabaseMaterial databaseMaterial = new DatabaseMaterial(this);
+        try (DatabaseMaterial databaseMaterial = new DatabaseMaterial(this)) {
 
-        // Set up RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewEmployees);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Fetch employees from the database
-        employeeList = databaseMaterial.getAllEmployees();
-        adapter = new EmployeeAdapter(employeeList);
-        recyclerView.setAdapter(adapter);
+            databaseMaterial.clearEmployees();
 
-        // Load employees from the API
-        loadEmployees();
+            RecyclerView recyclerView = findViewById(R.id.recyclerViewEmployees);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+            employeeList = databaseMaterial.getAllEmployees();
+            adapter = new EmployeeAdapter(this, employeeList);
+            recyclerView.setAdapter(adapter);
+
+            loadEmployees();
+
+        } catch (Exception e) {
+            Log.e("DB_ERROR", "Error initializing or using the database", e);
+        }
+
+
+
     }
 
 
     private void loadEmployees() {
-        int[] employeeIds = {1440, 1441, 1403, 1407}; // Your employee IDs
+        int[] employeeIds = {1440, 1441, 1438, 1437}; // Your specified employee IDs
+        DatabaseMaterial databaseMaterial = new DatabaseMaterial(this);
 
-        try (DatabaseMaterial databaseMaterial = new DatabaseMaterial(this)) { // Try-with-resources
-            for (int id : employeeIds) {
-                ApiMaterial.getEmployeeById(this, id, new ApiMaterial.VolleyResponseListener() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject obj = new JSONObject(response);
+        // Loop through the IDs and fetch each employee
+        for (int id : employeeIds) {
+            ApiMaterial.getEmployeeById(this, id, new ApiMaterial.VolleyResponseListener() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject obj = new JSONObject(response);
+                        int position = employeeList.size(); // Current position before adding
 
+                        // Check if the employee already exists in the database
+                        boolean exists = false;
+                        for (EmployeeA e : employeeList) {
+                            if (e.getId() == obj.getInt("id")) {
+                                exists = true;
+                                break;
+                            }
+                        }
+
+                        if (!exists) {
+                            // Create and add the employee
                             EmployeeA employee = new EmployeeA(
                                     obj.getInt("id"),
                                     obj.optString("firstname", "N/A"),
@@ -64,26 +83,23 @@ public class AdminEmployees extends AppCompatActivity
                                     obj.optDouble("salary", 0.0)
                             );
 
-                            databaseMaterial.addEmployee(employee);
-
-                            employeeList.add(employee);
-                            adapter.notifyItemInserted(employeeList.size() - 1);
-
-                        } catch (Exception e) {
-                            Log.e("JSON_PARSE_ERROR", "Error parsing JSON", e);
+                            databaseMaterial.addEmployee(employee); // Save to SQLite
+                            employeeList.add(employee);             // Add to local list
+                            adapter.notifyItemInserted(position);   // Update RecyclerView
                         }
+                    } catch (Exception e) {
+                        Log.e("JSON_PARSE_ERROR", "Error parsing JSON", e);
                     }
+                }
 
-                    @Override
-                    public void onError(String error) {
-                        Log.e("API_ERROR", "Error fetching employee with ID: " + id + ", " + error);
-                    }
-                });
-            }
-        } catch (Exception e) {
-            Log.e("DB_ERROR", "Error initializing or using the database", e);
+                @Override
+                public void onError(String error) {
+                    Log.e("API_ERROR", "Error fetching employee with ID: " + id + ", " + error);
+                }
+            });
         }
     }
+
 
 
 }

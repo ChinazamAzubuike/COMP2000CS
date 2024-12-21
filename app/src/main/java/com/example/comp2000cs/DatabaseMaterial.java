@@ -102,9 +102,15 @@ public class DatabaseMaterial extends SQLiteOpenHelper {
     }
 
     // Delete an Employee by ID
+//    public void deleteEmployee(int id) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        db.delete(TABLE_EMPLOYEES, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+//        db.close();
+//    }
+
     public void deleteEmployee(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_EMPLOYEES, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        db.delete("employees", "id = ?", new String[]{String.valueOf(id)});
         db.close();
     }
 
@@ -135,5 +141,6 @@ public class DatabaseMaterial extends SQLiteOpenHelper {
     }
 
 
-
+    public void clearEmployees() {
+    }
 }
