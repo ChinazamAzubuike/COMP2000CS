@@ -1,5 +1,6 @@
 package com.example.comp2000cs;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,16 +9,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHolder> {
 
     private final List<EmployeeA> employeeList;
+    private final DatabaseMaterial databaseMaterial; // Database helper
 
     // Constructor
-    public EmployeeAdapter(List<EmployeeA> employeeList) {
+    public EmployeeAdapter(Context context, List<EmployeeA> employeeList) {
         this.employeeList = employeeList;
+        this.databaseMaterial = new DatabaseMaterial(context); // Initialize the database helper with context
     }
+
 
     @NonNull
     @Override
@@ -44,17 +49,13 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
             Toast.makeText(holder.itemView.getContext(), "Edit Employee: " + employee.getId(), Toast.LENGTH_SHORT).show();
         });
 
-        // Handle Delete button click
         holder.btnDelete.setOnClickListener(v -> {
-            employeeList.remove(position); // Remove the employee from the list
-            notifyItemRemoved(position); // Notify RecyclerView about the change
+            // Safely remove the employee
+            databaseMaterial.deleteEmployee(employee.getId()); // Delete from database
+            employeeList.remove(position); // Remove from the list
+            notifyItemRemoved(position);  // Notify RecyclerView of the change
             Toast.makeText(holder.itemView.getContext(), "Deleted Employee: " + employee.getId(), Toast.LENGTH_SHORT).show();
         });
-
-
-
-
-
     }
 
     @Override
