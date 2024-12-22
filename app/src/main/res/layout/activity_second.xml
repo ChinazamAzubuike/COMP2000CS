@@ -11,22 +11,30 @@
     >
 
 
-    <Button
-        android:id="@+id/backButton"
-        android:text="@string/backButton"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/grey"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="62dp"
+
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
 
+        android:background="@null"
+
+        android:contentDescription="@string/backButton"
+        android:scaleType="fitCenter"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backicon2"
+        tools:ignore="TouchTargetSizeCheck" />
 
-        />
+
+
+
+
+
 
 
     <TextView
@@ -49,7 +57,11 @@
     <EditText
         android:id="@+id/emailInput"
 
+
         android:hint="@string/emailInput"
+
+
+
         android:autofillHints="emailAddress"
 
         android:layout_width="300dp"
@@ -83,19 +95,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/loginTitle" />
 
-    <TextView
-        android:id="@+id/forgotPassword"
-        android:text="@string/forgotPassword"
+<!--    <TextView-->
+<!--        android:id="@+id/forgotPassword"-->
+<!--        android:text="@string/forgotPassword"-->
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
 
-        android:textColor="@color/help_color"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+<!--        android:textColor="@color/help_color"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />-->
 
     <TextView
         android:id="@+id/logotextText"
@@ -118,6 +130,9 @@
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="197dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+
 
         android:layout_height="174dp"
         android:layout_marginTop="24dp"
@@ -144,156 +159,14 @@
         android:textSize="22sp"
         android:textStyle="bold"
 
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
 
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
         />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="210dp"
-        android:text="@string/empText"
-        android:textColor="#000000"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        android:gravity="center"
-
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

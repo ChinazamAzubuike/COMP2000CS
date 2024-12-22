@@ -1,0 +1,113 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    android:padding="8dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="#AE050000"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        >
+
+<!--        <TextView android:id="@+id/textViewId"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/id" />-->
+
+        <TextView android:id="@+id/textViewFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="@string/firstname" />
+
+<!--        <TextView android:id="@+id/textViewLastName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/lastname" />-->
+
+<!--        <TextView android:id="@+id/textViewEmail"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/email" />-->
+
+        <TextView android:id="@+id/textViewDepartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="@string/department" />
+
+<!--        <TextView android:id="@+id/textViewJoiningDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/joiningdate" />-->
+
+<!--        <TextView android:id="@+id/textViewLeaves"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/leaves" />-->
+
+<!--        <TextView android:id="@+id/textViewSalary"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="19sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/salary" />-->
+
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnEdit"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit"
+
+                />
+
+            <Button
+                android:id="@+id/btnDelete"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"
+                android:textColor="#5B0000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

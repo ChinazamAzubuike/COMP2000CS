@@ -48,6 +48,8 @@ public class FourthActivity extends AppCompatActivity {
         ImageView notificationsIcon = findViewById(R.id.imageView3);
 
 
+
+        //notification button
         notificationsIcon.setOnClickListener(view -> {
             Intent intent = new Intent(FourthActivity.this, EighthActivity.class);
             startActivity(intent);

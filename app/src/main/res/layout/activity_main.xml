@@ -31,9 +31,9 @@
         />
 
     <TextView
-        android:id="@+id/login_asText"
-        android:text="@string/login_asText"
-        android:contentDescription="@string/login_asText"
+        android:id="@+id/please_login"
+        android:text="@string/please_login"
+        android:contentDescription="@string/please_login"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,65 +49,52 @@
         android:maxLines="1"
         />
 
-    <Button
-        android:id="@+id/employeeButton"
-        android:text="@string/employeeButton"
-        android:textAllCaps="false"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/rounded_button"
-        android:textColor="#1E1E1E"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/adminButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_asText" />
 
     <Button
-        android:id="@+id/adminButton"
-        android:text="@string/adminButton"
-        android:textAllCaps="false"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="@color/white"
+        android:id="@+id/loginButton"
+        android:layout_width="174dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="424dp"
         android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
+        android:text="@string/login_button"
+        android:textAllCaps="false"
         android:textColor="#1E1E1E"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/employeeButton"
-        app:layout_constraintTop_toBottomOf="@id/login_asText" />
-
-    <TextView
-        android:id="@+id/helpText"
-        android:text="@string/helpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:textColor="@color/help_color"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/logoText"
-        android:text="@string/logoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="600dp"
 
-        android:textStyle="bold"
+        android:text="@string/logoText"
         android:textColor="#322B4B"
         android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helpText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
+        <Button
+        android:id="@+id/btn_employee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/api"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

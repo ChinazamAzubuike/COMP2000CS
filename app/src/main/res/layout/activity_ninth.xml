@@ -132,7 +132,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/adminButton"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/login_asText" />
+                app:layout_constraintTop_toBottomOf="parent" />
 
 
             <androidx.cardview.widget.CardView

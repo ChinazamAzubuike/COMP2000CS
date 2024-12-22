@@ -3,6 +3,7 @@
 
     <string name="welcomeText">Welcome</string>
     <string name="login_asText">Login as:</string>
+    <string name="please_login">Please login:</string>
     <string name="employeeButton">Employee</string>
     <string name="adminButton">Admin</string>
     <string name="helpText">Need help?</string>
@@ -70,6 +71,147 @@
     <string name="notifications_switch_email">Email switch</string>
     <string name="notifications_switch_text">Text switch</string>
 
+
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+    <!--############################################### ADMIN SIDE ##################################################         -->
+
+
+    <string name="logouticon">logout</string>
+    <string name="greeting_text">Hi, %1$s</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="notifs">Notifications</string>
+
+
+    <!--        <string name="welcomeText">Welcome</string>-->
+    <!--        <string name="login_asText">Login as:</string>-->
+    <!--        <string name="employeeButton">Employee</string>-->
+    <!--        <string name="adminButton">Admin</string>-->
+    <!--        <string name="helpText">Need help?</string>-->
+    <!--        <string name="logoText">UnityHub</string>-->
+
+
+    <!--###################################### LOGIN PAGE ###########################################         -->
+
+    <!--        <string name="profile_image">Profile Image</string>-->
+    <!--        <string name="login_title">Login to your account</string>-->
+    <!--        <string name="fullnameInput">FULL NAME</string>-->
+    <!--        <string name="passwordInput">PASSWORD</string>-->
+    <!--        <string name="forgotPassword">Forgot password?</string>-->
+    <!--        <string name="login_button">LOGIN</string>-->
+    <!--        <string name="backButton">Back</string>-->
+
+
+    <!--###################################### ADMIN DASHBOARD ########################################### -->
+
+
+    <string name="adminText">Admin</string>
+    <string name="admText">Admin</string>
+    <string name="your_employees">Your employees</string>
+    <string name="add_remove">Add/Remove an Employee</string>
+    <string name="holiday_requests">Holiday Requests</string>
+    <!--        <string name="settings_image">Settings icon</string>-->
+    <!--        <string name="notifs_image">Notification icon</string>-->
+
+
+    <!--###################################### ADD OR REMOVE ###########################################         -->
+
+    <string name="your_employees_tab">Your Employees</string>
+    <string name="add_remove_tab">Add/Remove An Employee</string>
+    <string name="action_to_take">Which action would you like take?</string>
+    <string name="add_employee">Add an employee</string>
+    <string name="remove_employee">Remove an employee</string>
+
+
+    <!--###################################### ADD EMPLOYEE ###########################################         -->
+
+
+    <string name="add_employee_tab">Add Employee</string>
+
+
+    <!--######################################### REMOVE EMPLOYEE ############################################    -->
+
+    <string name="remove_employee_tab">Remove Employee</string>
+
+
+    <!--########################################### HOLIDAY REQUESTS #############################################     -->
+
+    <string name="holidays_request_tab">Holiday Requests</string>
+
+
+    <!--########################################### OLD #############################################     -->
+
+
+    <!--        <string name="settings_tab">Settings</string>-->
+    <!--        <string name="account">Account</string>-->
+    <!--        <string name="edit_profile">Edit profile</string>-->
+    <!--        <string name="privacy">Privacy</string>-->
+    <!--        <string name="delete_account">Delete account</string>-->
+    <!--        <string name="notifications">Notifications</string>-->
+    <!--        <string name="email">Email</string>-->
+    <!--        <string name="text">Text</string>-->
+    <!--        <string name="push_notifications">Push notifications</string>-->
+    <!--        <string name="notification_preferences">Notification Preferences</string>-->
+    <!--        <string name="salary_updates">Salary updates</string>-->
+    <!--        <string name="meetings">Meetings</string>-->
+    <!--        <string name="permissions">Permissions</string>-->
+    <!--        <string name="camera">Camera</string>-->
+    <!--        <string name="location">Location</string>-->
+
+
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="department">Department</string>
+    <string name="salary">Salary</string>
+    <string name="joiningdate">Joining date</string>
+    <string name="leaves">Leaves</string>
+    <string name="id">ID</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+
+
+    <string name="api">API btn</string>
+
+
+    <string name="employee_id">ID: %1$d</string>
+    <string name="employee_name">Name: %1$s %2$s</string>
+    <string name="employee_email">Email: %1$s</string>
+    <string name="employee_department">Department: %1$s</string>
+    <string name="employee_joining_date">Joining Date: %1$s</string>
+    <string name="employee_leaves">Leaves: %1$d</string>
+    <string name="employee_salary">Salary: $%1$.2f</string>
+    <string name="save">Save</string>
+
+
+
+    <string name="id_colon">ID:</string>
+    <string name="firstname_colon">First name:</string>
+    <string name="lastname_colon">Last Name:</string>
+    <string name="email_colon">Email</string>
+    <string name="department_colon">Department</string>
+    <string name="joining_date_colon">Joining Date:</string>
+    <string name="leaves_colon">Leaves:</string>
+    <string name="salary_colon">Salary:</string>
+
+
+
+
+
+    <!--    <string name="loading">Loading…</string>-->
+
+    <!--    <string name="error_message">Error: %1$s</string>-->
+
+    <!--    <string name="error_parsing">Error parsing JSON: %1$s</string>-->
+    <!--    <string name="error_request">Error: %1$s</string>-->
+    <!--    <string name="total_employees">Total Employees: %1$d</string>-->
+
+    <!--    <string name="employee_name">%1$s %2$s</string>-->
 
 
 </resources>
