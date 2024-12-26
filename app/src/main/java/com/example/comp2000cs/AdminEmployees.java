@@ -1,5 +1,6 @@
 package com.example.comp2000cs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 //import java.util.ArrayList;
 import java.util.List;
 import android.util.Log;
+import android.widget.Button;
 //import android.view.View;
 
 
@@ -17,21 +19,31 @@ import org.json.JSONObject;
 public class AdminEmployees extends AppCompatActivity
 {
 
+
+
     private EmployeeAdapter adapter;
     private List<EmployeeA> employeeList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_employees);
 
-        try (DatabaseMaterial databaseMaterial = new DatabaseMaterial(this)) {
 
+        try (DatabaseMaterial databaseMaterial = new DatabaseMaterial(this))
+        {
 
-            databaseMaterial.clearEmployees();
 
             RecyclerView recyclerView = findViewById(R.id.recyclerViewEmployees);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+            Button btnAddEmployee = findViewById(R.id.btnAddEmployee);
+            btnAddEmployee.setOnClickListener(v -> {
+                // Launch AddEmployeeActivity
+                Intent intent = new Intent(AdminEmployees.this, AddEmployee.class);
+                startActivity(intent);
+            });
 
             employeeList = databaseMaterial.getAllEmployees();
             adapter = new EmployeeAdapter(this, employeeList);
@@ -49,29 +61,20 @@ public class AdminEmployees extends AppCompatActivity
 
 
     private void loadEmployees() {
-        int[] employeeIds = {1561, 1562, 1564, 1564, 1565}; // Your specified employee IDs
+        int[] employeeIds = {1648, 1649, 1650, 1651, 1652}; // Your specified employee IDs
         DatabaseMaterial databaseMaterial = new DatabaseMaterial(this);
 
-        // Loop through the IDs and fetch each employee
         for (int id : employeeIds) {
             ApiMaterial.getEmployeeById(this, id, new ApiMaterial.VolleyResponseListener() {
                 @Override
                 public void onResponse(String response) {
                     try {
                         JSONObject obj = new JSONObject(response);
-                        int position = employeeList.size(); // Current position before adding
 
                         // Check if the employee already exists in the database
-                        boolean exists = false;
-                        for (EmployeeA e : employeeList) {
-                            if (e.getId() == obj.getInt("id")) {
-                                exists = true;
-                                break;
-                            }
-                        }
-
-                        if (!exists) {
-                            // Create and add the employee
+                        EmployeeA existingEmployee = databaseMaterial.getEmployeeById(obj.getInt("id"));
+                        if (existingEmployee == null) {
+                            // Create and add the employee if it doesn't already exist
                             EmployeeA employee = new EmployeeA(
                                     obj.getInt("id"),
                                     obj.optString("firstname", "N/A"),
@@ -85,7 +88,7 @@ public class AdminEmployees extends AppCompatActivity
 
                             databaseMaterial.addEmployee(employee); // Save to SQLite
                             employeeList.add(employee);             // Add to local list
-                            adapter.notifyItemInserted(position);   // Update RecyclerView
+                            adapter.notifyItemInserted(employeeList.size() - 1); // Update RecyclerView
                         }
                     } catch (Exception e) {
                         Log.e("JSON_PARSE_ERROR", "Error parsing JSON", e);

@@ -11,6 +11,25 @@
     >
 
 
+    <Button
+        android:id="@+id/btnAddEmployee"
+        android:backgroundTint="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="168dp"
+        android:text="@string/add_new_employee"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+
+        android:paddingVertical="20dp"
+        android:background="@drawable/rounded_button"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/yourEmployees"
         android:text="@string/your_employees_tab"
@@ -42,7 +61,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="#000000"
         android:maxWidth="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +151,7 @@
         android:id="@+id/recyclerViewEmployees"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="90dp"
 
 
 

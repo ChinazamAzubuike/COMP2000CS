@@ -1,6 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
+    // Add the dependency for the Google services Gradle plugin
+    id("com.google.gms.google-services") version "4.4.2" apply false
+
+
+
+
 }
+
+apply(plugin = "com.google.gms.google-services")
 
 android {
     namespace = "com.example.comp2000cs"
@@ -45,6 +53,11 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation(libs.volley)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+   implementation(libs.firebase.messaging)
+
 
 //    implementation(libs.gson)
 

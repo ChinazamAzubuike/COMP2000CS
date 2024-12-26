@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "737389749432",
+    "project_id": "comp2000cs",
+    "storage_bucket": "comp2000cs.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737389749432:android:249fe0d8b96047dcc6c04d",
+        "android_client_info": {
+          "package_name": "com.example.comp2000cs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZrT2Q8_3wErI2i5yXVkC4sT1z9K9eM6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

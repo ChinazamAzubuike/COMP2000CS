@@ -12,53 +12,85 @@
 
 
 
+
+
+    <TextView
+        android:text="@string/your_details"
+        android:textColor="#ffffff"
+        android:textSize="31sp"
+
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+
+        android:background="@color/softblack"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/Navigation"
-        android:layout_width="411dp"
-        android:layout_height="90dp"
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#000000"
+        android:maxWidth="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        tools:ignore="VisualLintBottomNav">
 
-
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:contentDescription="@string/profile_image"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/profileicon2" />
 
         <ImageView
             android:id="@+id/imageView3"
+            android:layout_width="42dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="336dp"
+
+            android:layout_marginVertical="6dp"
             android:contentDescription="@string/notifs_image"
-
-            android:layout_width="71dp"
-            android:layout_height="67dp"
-
-            android:layout_marginHorizontal="316dp"
-            android:layout_marginVertical="12dp"
 
             app:srcCompat="@drawable/notifsbell" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:contentDescription="@string/settings_image"
+            android:layout_width="61dp"
+            android:layout_height="40dp"
 
-            android:layout_width="74dp"
-            android:layout_height="61dp"
-
-            android:layout_marginVertical="14dp"
             android:layout_marginHorizontal="24dp"
+
+            android:layout_marginVertical="11dp"
+            android:contentDescription="@string/settings_image"
 
             app:srcCompat="@drawable/settingsicon" />
 
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
 
+            android:contentDescription="@drawable/homeicon"
+
+            app:srcCompat="@drawable/homeicon"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="343dp" />
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
@@ -71,7 +103,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/Navigation"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -82,111 +114,239 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <Button
-                android:id="@+id/backButton"
-                android:text="@string/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="130dp"
-                android:layout_marginTop="1dp"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/grey"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAllCaps="false"
-                />
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:contentDescription="@string/profile_image_a4"
+                android:layout_width="201dp"
+                android:layout_height="177dp"
 
-                android:layout_width="230dp"
-                android:layout_height="230dp"
-                android:layout_marginTop="40dp"
+
+                android:layout_marginTop="100dp"
                 android:background="@null"
+                android:contentDescription="@string/profile_image_a4"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/profileicon2"
                 tools:layout_editor_absoluteX="108dp"
                 tools:layout_editor_absoluteY="31dp" />
 
+<!--            <TextView-->
+<!--                android:id="@+id/forgotPassword"-->
+<!--                android:text="@string/change_profile"-->
 
-            <TextView
-                android:id="@+id/forgotPassword"
-                android:text="@string/change_profile"
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="32dp"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/passwordInput" />-->
 
-                android:layout_width="wrap_content"
+<!--            <EditText-->
+<!--                android:id="@+id/firstnameInput"-->
+<!--                android:text="@string/firstnameInput"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:hint="@string/first_name"-->
+<!--                android:autofillHints="name"-->
+
+<!--                android:layout_width="309dp"-->
+<!--                android:layout_height="63dp"-->
+
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:layout_marginTop="110dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+
+<!--                android:background="@drawable/rounded_button2"-->
+<!--                android:padding="17dp"-->
+
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.483"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/surnameInput"-->
+<!--                android:text="@string/surnameInput"-->
+<!--                android:autofillHints="surnameInput"-->
+
+<!--                android:layout_width="309dp"-->
+<!--                android:layout_height="63dp"-->
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:layout_marginTop="36dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:background="@drawable/rounded_button2"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:padding="17dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.483"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/firstnameInput" />-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/emailAdInput"-->
+<!--                android:text="@string/emailAdInput"-->
+<!--                android:autofillHints="emailAddress"-->
+
+<!--                android:layout_width="309dp"-->
+<!--                android:layout_height="63dp"-->
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:layout_marginTop="36dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:background="@drawable/rounded_button2"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:padding="17dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.483"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--           />-->
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-            <EditText
-                android:id="@+id/firstnameInput"
-                android:text="@string/firstnameInput"
-                android:inputType="textPersonName"
-                android:hint="@string/first_name"
-                android:autofillHints="name"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                android:layout_width="309dp"
-                android:layout_height="63dp"
+                    <TextView
+                        android:id="@+id/textViewId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/id_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginEnd="30dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                android:background="@drawable/rounded_button2"
-                android:padding="17dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.483"
-                app:layout_constraintStart_toStartOf="parent" />
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <EditText
-                android:id="@+id/surnameInput"
-                android:text="@string/surnameInput"
-                android:autofillHints="surnameInput"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                android:layout_width="309dp"
-                android:layout_height="63dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/rounded_button2"
-                android:inputType="textPersonName"
-                android:padding="17dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.483"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/firstnameInput" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewDepartment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/department_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewSalary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/salary_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
-            <EditText
-                android:id="@+id/emailAdInput"
-                android:text="@string/emailAdInput"
-                android:autofillHints="emailAddress"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-                android:layout_width="309dp"
-                android:layout_height="63dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/rounded_button2"
-                android:inputType="textEmailAddress"
-                android:padding="17dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.483"
-                app:layout_constraintStart_toStartOf="parent"
-           />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
+                    <TextView
+                        android:id="@+id/textViewLeaves"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leaves_colon"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:textAllCaps="false"
-                android:id="@+id/personalDetailsButton"
+                android:id="@+id/edit_details"
                 android:background="@drawable/rounded_button4"
-                android:text="@string/PersonalDet"
+                android:text="@string/edit_details"
 
                 android:textSize="25sp"
                 android:layout_width="wrap_content"

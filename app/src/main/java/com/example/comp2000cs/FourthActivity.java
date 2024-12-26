@@ -1,60 +1,79 @@
 package com.example.comp2000cs;
 
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-//import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
-import android.widget.ImageView;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-
+import androidx.appcompat.app.AppCompatActivity;
 
 public class FourthActivity extends AppCompatActivity {
-
-    //EMPLOYEE PROFILE
+    private DatabaseMaterial dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fourth);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Initialize database helper
+        dbHelper = new DatabaseMaterial(this);
+
+        // Get the email from the intent
+        String email = getIntent().getStringExtra("email");
+        Log.d("FourthActivity", "Email received: " + email);
+
+        if (email == null || email.isEmpty()) {
+            Toast.makeText(this, "Error: No email provided.", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
+// Fetch and display employee details
+        EmployeeA employee = dbHelper.getEmployeeByEmail(email);
+        if (employee != null) {
+            displayEmployeeDetails(employee);
+        } else {
+            Toast.makeText(this, "Error: Employee not found.", Toast.LENGTH_SHORT).show();
+        }
 
 
-
-        //Personal details button - Main Profile to Personal details page
-        Button personalDetailsButton = findViewById(R.id.personalDetailsButton);
-        personalDetailsButton.setOnClickListener(view -> {
+        // Initialize the Edit Details button
+        Button editDetailsButton = findViewById(R.id.edit_details);
+        editDetailsButton.setOnClickListener(view -> {
+            // Create an Intent to navigate to FifthActivity
             Intent intent = new Intent(FourthActivity.this, FifthActivity.class);
+
+            // Pass the email to FifthActivity
+            intent.putExtra("email", email);
+
+            // Start FifthActivity
             startActivity(intent);
         });
+    }
 
+    private EmployeeA getEmployeeDetails(String email) {
+        return dbHelper.getAllEmployees().stream()
+                .filter(emp -> emp.getEmail().equals(email))
+                .findFirst()
+                .orElse(null);
+    }
 
-// BACK BUTTON
-        Button backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(view -> finish());
+    private void displayEmployeeDetails(EmployeeA employee) {
+        // Initialize and set TextViews for employee details
+        TextView idView = findViewById(R.id.textViewId);
+        TextView nameView = findViewById(R.id.textViewName);
+        TextView deptView = findViewById(R.id.textViewDepartment);
+        TextView emailView = findViewById(R.id.textViewEmail);
+        TextView salaryView = findViewById(R.id.textViewSalary);
+        TextView leavesView = findViewById(R.id.textViewLeaves);
 
-
-        ImageView notificationsIcon = findViewById(R.id.imageView3);
-
-
-
-        //notification button
-        notificationsIcon.setOnClickListener(view -> {
-            Intent intent = new Intent(FourthActivity.this, EighthActivity.class);
-            startActivity(intent);
-        });
-
-
+        idView.setText(getString(R.string.employee_id, employee.getId()));
+        nameView.setText(getString(R.string.employee_name, employee.getFirstname(), employee.getLastname()));
+        deptView.setText(getString(R.string.employee_department, employee.getDepartment()));
+        emailView.setText(getString(R.string.employee_email, employee.getEmail()));
+        salaryView.setText(getString(R.string.employee_salary, employee.getSalary()));
+        leavesView.setText(getString(R.string.employee_leaves, employee.getLeaves()));
     }
 }

@@ -31,7 +31,7 @@
     <string name="firstnameInput">First name</string>
     <string name="surnameInput">Surname</string>
     <string name="emailAdInput">Email</string>
-    <string name="PersonalDet">Other Personal Details</string>
+    <string name="edit_details">Edit Details</string>
     <string name="first_name">First Name</string>
 
     <string name="personal_details_tab">Personal Details</string>
@@ -125,7 +125,7 @@
     <string name="your_employees_tab">Your Employees</string>
     <string name="add_remove_tab">Add/Remove An Employee</string>
     <string name="action_to_take">Which action would you like take?</string>
-    <string name="add_employee">Add an employee</string>
+    <string name="add_an_employee">Add an employee</string>
     <string name="remove_employee">Remove an employee</string>
 
 
@@ -186,22 +186,41 @@
     <string name="employee_joining_date">Joining Date: %1$s</string>
     <string name="employee_leaves">Leaves: %1$d</string>
     <string name="employee_salary">Salary: $%1$.2f</string>
+
     <string name="save">Save</string>
-
-
+    <string name="no_fields">No more fields</string>
+    <string name="add_new_employee">Add new employee</string>
+    <string name="add_employee">Add employee</string>
+    <string name="employee_id_text">Employee ID</string>
 
     <string name="id_colon">ID:</string>
     <string name="firstname_colon">First name:</string>
     <string name="lastname_colon">Last Name:</string>
-    <string name="email_colon">Email</string>
-    <string name="department_colon">Department</string>
+    <string name="name_colon">Name:</string>
+    <string name="email_colon">Email:</string>
+    <string name="department_colon">Department:</string>
     <string name="joining_date_colon">Joining Date:</string>
     <string name="leaves_colon">Leaves:</string>
     <string name="salary_colon">Salary:</string>
 
 
+    <string name="enter_id">Enter ID</string>
+    <string name="enter_employee_id">Enter employee ID</string>
+    <string name="enter_employee_firstname">Enter first name</string>
+    <string name="enter_employee_lastname">Enter last name</string>
+    <string name="enter_employee_email">Enter email</string>
+    <string name="enter_employee_department">Enter Department</string>
+    <string name="enter_employee_joining_date">Enter Joining Date</string>
+    <string name="enter_leaves_count">Enter leaves count</string>
+    <string name="enter_employee_salary">Enter Salary</string>
+    <string name="submit_changes">SUBMIT CHANGES</string>
 
-
+    <string name="pending_requests">Pending Name Change Requests</string>
+    <string name="new_name_placeholder">New Name: %1$s %2$s</string>
+    <string name="new_name">New Name: </string>
+    <string name="employee_email_text">Employee Email</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
 
     <!--    <string name="loading">Loading…</string>-->
 
