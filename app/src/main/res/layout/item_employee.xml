@@ -97,6 +97,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/edit"
+                android:textSize="18sp"
+                android:layout_marginEnd="200dp"
 
                 />
 
@@ -106,8 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/delete"
-                android:textColor="#5B0000"
-                android:layout_marginStart="8dp" />
+               android:textSize="18sp"
+                android:textColor="#AB0000"
+                android:layout_marginStart="0dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

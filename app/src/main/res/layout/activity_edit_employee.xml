@@ -11,299 +11,255 @@
     >
 
 
-
     <TextView
         android:id="@+id/textView"
-        android:text="@string/add_employee_tab"
-
         android:layout_width="match_parent"
+
         android:layout_height="85dp"
-        android:background="#72000000"
+        android:background="#000000"
+        android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:text="@string/edit_employee_tab"
+        android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="31sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:gravity="center"
 
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="0dp"
-
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@drawable/gradient"
-    app:layout_constraintTop_toBottomOf="@id/textView"
-    >
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#B30B0000"
-        android:layout_marginTop="90dp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:background="@drawable/gradient"
+        android:padding="16dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         >
 
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/employee_id_text"
-            android:textStyle="bold"
-            android:paddingBottom="4dp"
-            android:textColor="#ffffff"
+            android:layout_marginTop="90dp"
+            android:background="#B30B0000"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/textView">
 
-            />
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="18dp"
+                android:backgroundTint="#ffffff"
+                android:text="@string/save"
+                android:textStyle="bold"
+                android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/editTextEmployeeId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="number"
-            android:hint="@string/id"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:text="@string/employee_id_text"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
 
+                />
 
-
-        <!-- First Name -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/firstname_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="name"
-            android:hint="@string/first_name"
-            android:inputType="textPersonName"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Last Name -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lastname_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="name"
-            android:hint="@string/lastname"
-            android:inputType="textPersonName"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Email -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="emailAddress"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Department -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/department_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextDepartment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="organizationName"
-            android:hint="@string/department"
-            android:inputType="text"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Joining Date -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/joining_date_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextJoiningDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="date"
-            android:hint="@string/joiningdate"
-            android:inputType="date"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Leaves -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/leaves_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextLeaves"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="number"
-            android:hint="@string/leaves"
-            android:inputType="number"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <!-- Salary -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/salary_colon"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/editTextSalary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="number"
-            android:hint="@string/salary"
-            android:inputType="numberDecimal"
-            android:textColor="#ffffff"
-            android:textColorHint="#FFFFFF"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            android:backgroundTint="#ffffff"
-            />
+            <EditText
+                android:id="@+id/editTextEmployeeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="number"
+                android:hint="@string/id"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF" />
 
 
+            <!-- First Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:text="@string/firstname_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Last Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/lastname_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:hint="@string/lastname"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/email_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Department -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/department_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="organizationName"
+                android:hint="@string/department"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Joining Date -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/joining_date_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextJoiningDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="date"
+                android:hint="@string/joiningdate"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Leaves -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/leaves_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextLeaves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="number"
+                android:hint="@string/leaves"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Salary -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/salary_colon"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextSalary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="number"
+                android:hint="@string/salary"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#FFFFFF"
+                tools:ignore="VisualLintTextFieldSize" />
 
 
-    </LinearLayout>
 
 
+        </LinearLayout>
 
-</ScrollView>
+
+    </ScrollView>
 
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="#000000"
-        android:maxWidth="600dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_icon_color"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintBottomNav">
-
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="42dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="336dp"
-
-            android:layout_marginVertical="6dp"
-            android:contentDescription="@string/notifs_image"
-
-            app:srcCompat="@drawable/notifsbell" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="61dp"
-            android:layout_height="40dp"
-
-            android:layout_marginHorizontal="24dp"
-
-            android:layout_marginVertical="11dp"
-            android:contentDescription="@string/settings_image"
-
-            app:srcCompat="@drawable/settingsicon" />
-
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="55dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-
-            android:contentDescription="@drawable/homeicon"
-
-            app:srcCompat="@drawable/homeicon"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="343dp" />
-
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

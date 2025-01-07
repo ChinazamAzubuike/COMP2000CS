@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class NameChangeRequestAdapter extends RecyclerView.Adapter<NameChangeRequestAdapter.ViewHolder> {
-    private final List<NameChangeRequest> requests;
+public class LeaveRequestAdapter extends RecyclerView.Adapter<LeaveRequestAdapter.ViewHolder> {
+    private final List<HolidayRequest> requests;
     private final RequestActionListener listener;
 
     public interface RequestActionListener {
-        void onAction(NameChangeRequest request, boolean isApproved);
+        void onAction(HolidayRequest request, boolean isApproved);
     }
 
-    public NameChangeRequestAdapter(List<NameChangeRequest> requests, RequestActionListener listener) {
+    public LeaveRequestAdapter(List<HolidayRequest> requests, RequestActionListener listener) {
         this.requests = requests;
         this.listener = listener;
     }
@@ -27,13 +27,13 @@ public class NameChangeRequestAdapter extends RecyclerView.Adapter<NameChangeReq
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_name_change_request, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_leave_request, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        NameChangeRequest request = requests.get(position);
+        HolidayRequest request = requests.get(position);
         holder.bind(request, listener);
     }
 
@@ -42,29 +42,26 @@ public class NameChangeRequestAdapter extends RecyclerView.Adapter<NameChangeReq
         return requests.size();
     }
 
-    public void updateList(List<NameChangeRequest> updatedRequests) {
-        this.requests.clear();
-        this.requests.addAll(updatedRequests);
-        notifyDataSetChanged();
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView emailView;
-        private final TextView nameView;
+        private final TextView datesView;
+        private final TextView totalDaysView;
         private final Button approveButton;
         private final Button rejectButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             emailView = itemView.findViewById(R.id.emailView);
-            nameView = itemView.findViewById(R.id.nameView);
+            datesView = itemView.findViewById(R.id.datesView);
+            totalDaysView = itemView.findViewById(R.id.totalDaysView);
             approveButton = itemView.findViewById(R.id.approveButton);
             rejectButton = itemView.findViewById(R.id.rejectButton);
         }
 
-        public void bind(NameChangeRequest request, RequestActionListener listener) {
+        public void bind(HolidayRequest request, RequestActionListener listener) {
             emailView.setText(request.getEmail());
-            nameView.setText("New Name: " + request.getNewFirstName() + " " + request.getNewLastName());
+            datesView.setText("Dates: " + request.getStartDate() + " to " + request.getEndDate());
+            totalDaysView.setText("Total Days: " + request.getTotalDays());
 
             approveButton.setOnClickListener(v -> listener.onAction(request, true));
             rejectButton.setOnClickListener(v -> listener.onAction(request, false));

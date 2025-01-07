@@ -116,6 +116,7 @@
     <string name="your_employees">Your employees</string>
     <string name="add_remove">Add/Remove an Employee</string>
     <string name="holiday_requests">Holiday Requests</string>
+    <string name="view_name_requests">View name requests</string>
     <!--        <string name="settings_image">Settings icon</string>-->
     <!--        <string name="notifs_image">Notification icon</string>-->
 
@@ -133,6 +134,8 @@
 
 
     <string name="add_employee_tab">Add Employee</string>
+    <string name="edit_employee_tab">Edit Employee</string>
+<string name="no_notifications_to_display">No notifications to display</string>
 
 
     <!--######################################### REMOVE EMPLOYEE ############################################    -->
@@ -221,6 +224,25 @@
     <string name="employee_email_text">Employee Email</string>
     <string name="approve">Approve</string>
     <string name="reject">Reject</string>
+
+    <string name="start_date">Start Date (YYYY-MM-DD)</string>
+    <string name="end_date">End Date (YYYY-MM-DD)</string>
+    <string name="book_holiday">BOOK HOLIDAY</string>
+    <string name="remaining_leave_days">Remaining leave days: 30</string>
+    <string name="pending_leave_requests">Pending leave requests</string>
+    <string name="status_pending">Status: Pending</string>
+    <string name="dates">Dates: </string>
+    <string name="days">Days: </string>
+
+
+
+    <string name="leave_dates">Dates: YYYY-MM-DD to YYYY-MM-DD</string>
+    <string name="total_days">Total Days: 5</string>
+    <string name="view_booked_holidays">View booked holidays</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_holiday_request">Edit Holiday Request</string>
+
+
 
     <!--    <string name="loading">Loading…</string>-->
 

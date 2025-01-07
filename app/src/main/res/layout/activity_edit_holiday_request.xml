@@ -1,0 +1,79 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/indigo"
+    >
+
+
+
+
+
+
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/editHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_holiday_request"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Start Date Input -->
+    <EditText
+        android:id="@+id/editStartDateInput"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+
+        android:autofillHints="date"
+        android:hint="@string/start_date"
+        android:inputType="date"
+        android:minHeight="50dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <!-- End Date Input -->
+    <EditText
+        android:id="@+id/editEndDateInput"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:autofillHints="date"
+        android:hint="@string/end_date"
+        android:inputType="date"
+        android:minHeight="50dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitEditHoliday"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/submit_changes"
+        android:background="#C1C0FD"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/cancelEditHoliday"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:minHeight="59dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FF6347"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/cancel"
+        android:textColor="#000000" />
+</LinearLayout>

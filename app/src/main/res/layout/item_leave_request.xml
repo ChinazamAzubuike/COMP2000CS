@@ -3,28 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:padding="16dp"
+    >
 
-    android:padding="8dp">
-
+    <!-- Employee Email -->
     <TextView
         android:id="@+id/emailView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/employee_email_text"
-        android:textColor="#ffffff"
         android:textSize="20sp"
+        android:textColor="#ffffff"
         android:textStyle="bold" />
 
+    <!-- Start and End Dates -->
     <TextView
-        android:id="@+id/nameView"
+        android:id="@+id/datesView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_name"
+        android:text="@string/leave_dates"
         android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="4dp" />
 
+    <!-- Total Days -->
+    <TextView
+        android:id="@+id/totalDaysView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_days"
+        android:textColor="#ffffff"
+        android:layout_marginTop="4dp" />
+
+    <!-- Action Buttons -->
     <LinearLayout
         style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
@@ -32,26 +42,28 @@
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
 
+        <!-- Approve Button -->
         <Button
             android:id="@+id/approveButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:background="#4CAF50"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="@string/approve" />
+            android:background="#4CAF50"
+            android:text="@string/approve"
+            android:textStyle="bold"
+            android:textColor="#263238" />
 
+        <!-- Reject Button -->
         <Button
             android:id="@+id/rejectButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#E40000"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_weight="1"
-            android:text="@string/reject" />
+            android:background="#F44336"
+            android:text="@string/reject"
+            android:textStyle="bold"
+            android:textColor="#000000" />
     </LinearLayout>
 </LinearLayout>
