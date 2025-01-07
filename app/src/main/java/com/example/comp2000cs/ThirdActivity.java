@@ -1,75 +1,90 @@
 package com.example.comp2000cs;
 
-import android.os.Bundle;
-
-//import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-//import androidx.core.graphics.Insets;
-//import androidx.core.view.ViewCompat;
-//import androidx.core.view.WindowInsetsCompat;
-
 import android.content.Intent;
-//import android.view.View;
+import android.graphics.drawable.Icon;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-//EMPLOYEE DASHBOARD
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ThirdActivity extends AppCompatActivity {
+
+    private DatabaseMaterial databaseMaterial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
+        databaseMaterial = new DatabaseMaterial(this);
 
-        Button empDetailsButton = findViewById(R.id.empDetails);
+        // Retrieve email passed from the login screen
+        String email = getIntent().getStringExtra("email");
 
-        // From employee dashboard to viewing profile
 
-           empDetailsButton.setOnClickListener(view -> {
-                Intent intent = new Intent(ThirdActivity.this, FourthActivity.class);
-                startActivity(intent);
-            });
+        Button viewBookedHolidaysButton = findViewById(R.id.view_booked_holidays);
 
 
 
 
-//From Employee dashboard to View booked holidays
-        Button empHolidaysButton = findViewById(R.id.empHolidays);
-        empHolidaysButton.setOnClickListener(view -> {
+
+        viewBookedHolidaysButton.setOnClickListener(v -> {
             Intent intent = new Intent(ThirdActivity.this, SixthActivity.class);
-            startActivity(intent);
-        });
-
-
-//From Dashboard to request a holiday
-        Button empRequestButton = findViewById(R.id.empRequest);
-        empRequestButton.setOnClickListener(view -> {
-            Intent intent = new Intent(ThirdActivity.this, SeventhActivity.class);
+            intent.putExtra("email", email); // Pass employee email to SixthActivity
             startActivity(intent);
         });
 
 
 
-        ImageView notificationsIcon = findViewById(R.id.imageView3);
+        if (email == null || email.isEmpty()) {
+            Toast.makeText(this, "Error: No email provided.", Toast.LENGTH_SHORT).show();
+            finish(); // Close the activity if no email is provided
+            return;
+        }
 
-// Set an OnClickListener using a lambda to navigate to the EighthActivity
-        notificationsIcon.setOnClickListener(view -> {
-            Intent intent = new Intent(ThirdActivity.this, NinthActivity.class);
-            startActivity(intent);
-        });
-
-
-
-        ImageView profileIcon = findViewById(R.id.imageView);
-
-// third page to FourthActivity
-        profileIcon.setOnClickListener(view -> {
+        // Employee details button
+        Button empDetailsButton = findViewById(R.id.empDetails);
+        empDetailsButton.setOnClickListener(view -> {
             Intent intent = new Intent(ThirdActivity.this, FourthActivity.class);
+            intent.putExtra("email", email); // Pass the email to FourthActivity
+            startActivity(intent);
+        });
+
+        // Holiday request button
+        Button leaveRequestsButton = findViewById(R.id.request_holiday);
+        leaveRequestsButton.setOnClickListener(view -> {
+            Intent intent = new Intent(ThirdActivity.this, SeventhActivity.class);
+            intent.putExtra("email", email); // Pass the email to SeventhActivity
             startActivity(intent);
         });
 
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.notifications) {
+                //navigate to NinthActivity when bell icon is clicked
+                Intent intent = new Intent(ThirdActivity.this, NinthActivity.class);
+                startActivity(intent);
+                return true;
+            }
+            return false;
+        });
+
+
+    }
+
+    private EmployeeA getEmployeeByEmail(String email) {
+        for (EmployeeA employee : databaseMaterial.getAllEmployees()) {
+            if (employee.getEmail().equals(email)) {
+                return employee;
+            }
+        }
+        return null;
     }
 }

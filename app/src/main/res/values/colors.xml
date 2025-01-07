@@ -15,12 +15,9 @@
     <color name="declined_color">#780000</color>
 
 
-
-
-
     <color name="admincolor">#8D313C</color>
 
-
+    <color name="bottom_nav_icon_color">#FFFFFF</color>
 
 
 </resources>
